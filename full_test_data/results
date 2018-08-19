@@ -1,0 +1,172 @@
+Kim-Jacksons-MacBook-Pro:substrings kimj$ for i in {0..18}; do j=`printf %02d $i`; echo; echo "----"; echo "input$j.txt"; r=`cat full_test_data/output$j.txt`; echo "result should be $r"; time cat full_test_data/input$j.txt | ./RepeatedSubstrings; done
+
+----
+input00.txt
+result should be 3
+3
+
+real	0m0.022s
+user	0m0.003s
+sys	0m0.010s
+
+----
+input01.txt
+result should be 7498
+7498
+
+real	0m1.368s
+user	0m1.348s
+sys	0m0.014s
+
+----
+input02.txt
+result should be 7497
+7497
+
+real	0m0.293s
+user	0m0.279s
+sys	0m0.010s
+
+----
+input03.txt
+result should be 2
+2
+
+real	0m2.980s
+user	0m2.953s
+sys	0m0.019s
+
+----
+input04.txt
+result should be 1
+1
+
+real	0m2.996s
+user	0m2.980s
+sys	0m0.018s
+
+----
+input05.txt
+result should be 149997
+149997
+
+real	2m45.808s
+user	2m44.715s
+sys	0m1.188s
+
+----
+input06.txt
+result should be 74997
+74997
+
+real	1m41.186s
+user	1m40.409s
+sys	0m0.771s
+
+----
+input07.txt
+result should be 49497
+49497
+
+real	1m15.221s
+user	1m14.752s
+sys	0m0.484s
+
+----
+input08.txt
+result should be 34498
+34498
+
+real	1m49.418s
+user	1m48.705s
+sys	0m0.713s
+
+----
+input09.txt
+result should be 34498
+34498
+
+real	1m47.582s
+user	1m46.916s
+sys	0m0.678s
+
+----
+input10.txt
+result should be 32997
+32997
+
+real	2m43.706s
+user	2m42.902s
+sys	0m0.923s
+
+----
+input11.txt
+result should be 74998
+74998
+
+real	3m0.550s
+user	2m59.509s
+sys	0m1.203s
+
+----
+input12.txt
+result should be 67498
+67498
+
+real	7m32.725s
+user	7m30.523s
+sys	0m2.685s
+
+----
+input13.txt
+result should be 61
+61
+
+real	0m0.020s
+user	0m0.003s
+sys	0m0.007s
+
+----
+input14.txt
+result should be 0
+0
+
+real	0m0.024s
+user	0m0.003s
+sys	0m0.009s
+
+----
+input15.txt
+result should be 2
+2
+
+real	0m0.022s
+user	0m0.003s
+sys	0m0.007s
+
+----
+input16.txt
+result should be 0
+0
+
+real	0m0.021s
+user	0m0.002s
+sys	0m0.007s
+
+----
+input17.txt
+result should be 0
+0
+
+real	0m0.023s
+user	0m0.003s
+sys	0m0.009s
+
+----
+input18.txt
+result should be 0
+0
+
+real	0m0.023s
+user	0m0.003s
+sys	0m0.010s
