@@ -9,3 +9,7 @@ The file `RepeatedSubstrings` is a binary, compiled for MacOS, so if you've got 
 Try:
 `ghc --make RepeatedSubstrings.hs -Wall -O2 -prof -fprof-auto`
 `time for f in full_test_data/input*; do cat $f | ./RepeatedSubstrings; done`
+
+To see profile data:
+`cat full_test_data/input01.txt | ./RepeatedSubstrings +RTS -p`
+`cat RepeatedSubstrings.prof`
