@@ -1,23 +1,21 @@
+import qualified Data.ByteString as B
+
 main = do
-    input <- getLine
+    input <- B.getLine
     print (repeatedsubstrings input)
 
-repeatedsubstrings :: String -> Int
-repeatedsubstrings s  = do
-    let l = length s
-    let m = (l-1) `div` 2
-    sum [ checkpartitions s l i | i <- [1..m] ]
+repeatedsubstrings :: B.ByteString -> Int
+repeatedsubstrings s  = sum [ checkpartitions s i | i <- [1..((B.length s)-1) `div` 2] ]
 
-checkpartitions :: String -> Int -> Int -> Int
-checkpartitions s l i  = (match s l i 0 0 i)           -- YYW
-                       + (match s l i 0 0 (l-i))       -- YWY
-                       + (match s l i 0 (l-2*i) (l-i)) -- WYY
--- 0..i       first i chars
--- i..2i      next i chars
--- l-2i..l-i  next to last i chars
--- l-i..l     last i chars
+checkpartitions :: B.ByteString -> Int -> Int
+--                      YYW             YWY             WYY
+checkpartitions s i  = (match y1 y2) + (match y1 y4) + (match y3 y4)
+    where y1 = B.take i s                   -- 0..i       first i chars
+          y2 = B.take i $ B.drop i s        -- i..2i      next i chars
+          y3 = B.take i $ B.drop (l-2*i) s  -- l-2i..l-i  next to last i chars
+          y4 = B.drop (l-i) s               -- l-i..l     last i chars
+          l  = B.length s
 
-match :: String -> Int -> Int-> Int -> Int -> Int -> Int
-match s l i j y1 y2 | j == i                 = 1
-                    | s!!(y1+j) /= s!!(y2+j) = 0
-                    | otherwise              = match s l i y1 y2 (j+1)
+match :: B.ByteString -> B.ByteString -> Int
+match x y | x == y    = 1
+          | otherwise = 0
